@@ -1,0 +1,50 @@
+.app-shell {
+  max-width: 640px;
+  margin: 2.5rem auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  color: #1f2937;
+}
+
+h1 { margin: 0 0 0.25rem; font-size: 1.6rem; }
+.subtitle { margin: 0 0 1.5rem; color: #6b7280; font-size: 0.85rem; }
+
+.error-banner {
+  background: #fef2f2;
+  color: #b91c1c;
+  border: 1px solid #fecaca;
+  padding: 0.7rem 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btn-link { background: none; border: none; color: #b91c1c; text-decoration: underline; cursor: pointer; font-size: 0.85rem; }
+
+.toolbar { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1.25rem; }
+.filters { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+
+.chip { padding: 0.4rem 0.9rem; border-radius: 999px; border: 1px solid #d0d5dd; background: #fff; font-size: 0.85rem; cursor: pointer; color: #374151; }
+.chip-active { background: #4f46e5; border-color: #4f46e5; color: #fff; }
+
+.sort-toggle { font-size: 0.85rem; display: flex; align-items: center; gap: 0.4rem; color: #374151; cursor: pointer; }
+.loading { padding: 2rem 0; text-align: center; color: #6b7280; }
+
+.todo-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.5rem; }
+.todo-item { display: flex; align-items: center; gap: 0.7rem; padding: 0.7rem 0.9rem; border: 1px solid #eef0f2; border-radius: 10px; background: #fafafa; }
+.todo-item.completed .todo-title { text-decoration: line-through; color: #9ca3af; }
+.todo-title { flex: 1; font-size: 0.95rem; word-break: break-word; }
+
+.priority-badge { font-size: 0.72rem; padding: 0.2rem 0.55rem; border-radius: 999px; font-weight: 600; white-space: nowrap; }
+.priority-badge[data-priority='low'] { background: #dcfce7; color: #166534; }
+.priority-badge[data-priority='medium'] { background: #fef9c3; color: #854d0e; }
+.priority-badge[data-priority='high'] { background: #fee2e2; color: #991b1b; }
+
+.icon-btn { background: none; border: none; cursor: pointer; font-size: 1rem; padding: 0.2rem; line-height: 1; }
+.empty-state { text-align: center; padding: 1.5rem 0; color: #9ca3af; font-size: 0.9rem; }

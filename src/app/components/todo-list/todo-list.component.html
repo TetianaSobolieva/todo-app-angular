@@ -1,0 +1,50 @@
+<div class="app-shell">
+  <h1>Список справ</h1>
+  <p class="subtitle">Дані синхронізуються з JSONPlaceholder API (симуляція бекенду)</p>
+
+  <app-todo-form
+    [editingTodo]="editingTodo()"
+    (save)="onSave($event)"
+    (cancel)="onCancelEdit()"
+  ></app-todo-form>
+
+  <div *ngIf="error()" class="error-banner">
+    {{ error() }}
+    <button class="btn-link" (click)="reload()">Спробувати ще раз</button>
+  </div>
+
+  <div class="toolbar">
+    <div class="filters">
+      <button class="chip" [class.chip-active]="filter() === 'all'" (click)="setFilter('all')">
+        Усі ({{ stats().total }})
+      </button>
+      <button class="chip" [class.chip-active]="filter() === 'active'" (click)="setFilter('active')">
+        Невиконані ({{ stats().active }})
+      </button>
+      <button class="chip" [class.chip-active]="filter() === 'completed'" (click)="setFilter('completed')">
+        Виконані ({{ stats().completed }})
+      </button>
+    </div>
+
+    <label class="sort-toggle">
+      <input type="checkbox" [checked]="sortByPriority()" (change)="toggleSort()" />
+      Сортувати за пріоритетом
+    </label>
+  </div>
+
+  <div *ngIf="loading()" class="loading">Завантаження…</div>
+
+  <ul class="todo-list" *ngIf="!loading()">
+    <li *ngFor="let todo of visibleTodos(); trackBy: trackById" class="todo-item" [class.completed]="todo.completed">
+      <input type="checkbox" [checked]="todo.completed" (change)="toggleCompleted(todo)" />
+      <span class="todo-title">{{ todo.title }}</span>
+      <span class="priority-badge" [attr.data-priority]="todo.priority">
+        {{ priorityLabel(todo.priority) }}
+      </span>
+      <button class="icon-btn" title="Редагувати" (click)="startEdit(todo)">✏️</button>
+      <button class="icon-btn" title="Видалити" (click)="remove(todo.id)">🗑️</button>
+    </li>
+
+    <li *ngIf="visibleTodos().length === 0" class="empty-state">Тут поки що порожньо.</li>
+  </ul>
+</div>
