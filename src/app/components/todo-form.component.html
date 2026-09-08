@@ -1,0 +1,24 @@
+<form class="todo-form" (ngSubmit)="submit()">
+  <input
+    class="todo-input"
+    type="text"
+    name="title"
+    placeholder="Що потрібно зробити?"
+    [(ngModel)]="title"
+    autocomplete="off"
+  />
+
+  <select class="priority-select" name="priority" [(ngModel)]="priority">
+    <option value="low">Низький</option>
+    <option value="medium">Середній</option>
+    <option value="high">Високий</option>
+  </select>
+
+  <button type="submit" class="btn btn-primary">
+    {{ isEditing ? 'Зберегти' : 'Додати' }}
+  </button>
+
+  <button *ngIf="isEditing" type="button" class="btn btn-secondary" (click)="onCancel()">
+    Скасувати
+  </button>
+</form>
