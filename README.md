@@ -1,27 +1,34 @@
 # TodoApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.21.
+A simple web application for managing a to-do list, developed using Angular 18.
 
-## Development server
+The project was created as a technical test task to demonstrate practical skills in Angular, component development, forms, HTTP requests, REST API integration, and data management.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Features
 
-## Code scaffolding
+* Add, edit and delete tasks
+* Mark tasks as completed
+* Set task priority: Low / Medium / High
+* Sort tasks by priority
+* Filter tasks: All / Completed / Incomplete
+* REST API integration using JSONPlaceholder
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## 🔗 Demo [Live Demo](https://tetianasobolieva.github.io/todo-app-angular/)
+
+## Technologies
+* Angular 18
+* TypeScript
+* HTML5 / CSS3
+* Angular HttpClient
+* RxJS
+* REST API
+
+## Run locally
+npm install
+ng serve
+
+Open http://localhost:4200/.
 
 ## Build
+ng build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
